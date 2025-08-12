@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-    <body>
-        <h1>Bebidas</h1>
-
+@include('componentes.header')
         <form action="/bebida" method="POST">
             @csrf
             Nombre <input type="text" name="nombre"> <br>
@@ -35,5 +26,6 @@
                 {{ $bebida->nombre }} - {{ $bebida->stock }} <a href="/bebida/{{ $bebida->id }}">Ver Detalles</a> <a href="/eliminar/{{ $bebida->id }}">Eliminar</a> <a href="/editar/{{ $bebida->id }}">Editar</a> <br>
             </div>
         @endforeach
-    </body>
-</html>
+
+@include('componentes.footer')
+    
